@@ -27,11 +27,11 @@ export function EarnTab() {
             title="Refresh Vault Data" 
             className="p-1.5 rounded-full hover:bg-input transition-colors text-text-secondary hover:text-text-main"
           >
-            <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin text-[#00A3FF]' : ''}`} />
+            <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin text-[#FF007A]' : ''}`} />
           </button>
         </div>
         <p className="text-base text-text-secondary mb-4">Deploy ETH and USD stablecoins into DeFi vaults for on-chain rewards through the world's leading protocols.</p>
-        <a href="https://docs.lido.fi/" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-[#00A3FF] hover:text-[#0090E6] transition-colors">How Lido Earn Works</a>
+        <a href="https://docs.lido.fi/" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-[#FF007A] hover:text-[#0090E6] transition-colors">How Lido Earn Works</a>
       </motion.div>
 
       {isLoading ? (
@@ -66,7 +66,7 @@ export function EarnTab() {
           <div className="space-y-3 mb-6">
             <div className="flex justify-between text-sm">
               <span className="text-text-secondary font-medium flex items-center gap-1">APY* (14d avg.) <span className="w-3 h-3 rounded-full border border-text-secondary flex items-center justify-center text-[8px]">?</span></span>
-              <span className="font-bold text-[#00A3FF]">4%</span>
+              <span className="font-bold text-[#FF007A]">4%</span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-text-secondary font-medium">TVL</span>
@@ -78,7 +78,7 @@ export function EarnTab() {
             </div>
           </div>
           
-          <button className="w-full py-4 text-lg rounded-xl mb-4 text-[#00A3FF] font-bold bg-[#00A3FF]/10 hover:bg-[#00A3FF]/20 transition-colors">
+          <button className="w-full py-4 text-lg rounded-xl mb-4 text-[#FF007A] font-bold bg-[#FF007A]/10 hover:bg-[#FF007A]/20 transition-colors">
             Deposit
           </button>
           <button className="text-sm font-medium text-text-secondary hover:text-text-main transition-colors flex items-center justify-center gap-1 w-full">
@@ -111,7 +111,7 @@ export function EarnTab() {
           <div className="space-y-3 mb-6">
             <div className="flex justify-between text-sm">
               <span className="text-text-secondary font-medium flex items-center gap-1">APY* (14d avg.) <span className="w-3 h-3 rounded-full border border-text-secondary flex items-center justify-center text-[8px]">?</span></span>
-              <span className="font-bold text-[#00A3FF]">7%</span>
+              <span className="font-bold text-[#FF007A]">7%</span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-text-secondary font-medium">TVL</span>
@@ -123,7 +123,7 @@ export function EarnTab() {
             </div>
           </div>
           
-          <button className="w-full py-4 text-lg rounded-xl mb-4 text-[#00A3FF] font-bold bg-[#00A3FF]/10 hover:bg-[#00A3FF]/20 transition-colors">
+          <button className="w-full py-4 text-lg rounded-xl mb-4 text-[#FF007A] font-bold bg-[#FF007A]/10 hover:bg-[#FF007A]/20 transition-colors">
             Deposit
           </button>
           <button className="text-sm font-medium text-text-secondary hover:text-text-main transition-colors flex items-center justify-center gap-1 w-full">
