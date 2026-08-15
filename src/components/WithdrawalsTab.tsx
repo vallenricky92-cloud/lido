@@ -145,7 +145,7 @@ export function WithdrawalsTab() {
             <div className="grid grid-cols-2 gap-4 mb-6">
               <button 
                 onClick={() => setMethod('lido')}
-                className={`p-4 rounded-xl border text-center transition-all relative ${method === 'lido' ? 'bg-[#00A3FF]/10 border-[#00A3FF] shadow-md shadow-[#00A3FF]/10' : 'bg-input border-border-main hover:border-[#00A3FF]/40'}`}
+                className={`p-4 rounded-xl border text-center transition-all relative ${method === 'lido' ? 'bg-[#FF007A]/10 border-[#FF007A] shadow-md shadow-[#00A3FF]/10' : 'bg-input border-border-main hover:border-[#FF007A]/40'}`}
               >
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <LidoSymbolIcon className="w-6 h-6" />
@@ -169,7 +169,7 @@ export function WithdrawalsTab() {
             </div>
 
             {/* Input Box */}
-            <div className="bg-input rounded-2xl p-4 mb-6 border border-border-main transition-colors focus-within:border-[#00A3FF] focus-within:ring-1 focus-within:ring-[#00A3FF] relative h-[120px] flex flex-col justify-between">
+            <div className="bg-input rounded-2xl p-4 mb-6 border border-border-main transition-colors focus-within:border-[#FF007A] focus-within:ring-1 focus-within:ring-[#00A3FF] relative h-[120px] flex flex-col justify-between">
               <input 
                 type="text" 
                 placeholder="0" 
@@ -190,7 +190,7 @@ export function WithdrawalsTab() {
                     Balance: {isBalanceLoading && isConnected ? <Skeleton className="h-3 w-10 inline-block" /> : `${formattedBalance} stETH`}
                   </span>
                   {isConnected && (
-                    <button onClick={handleMax} className="text-[10px] uppercase font-bold text-[#00A3FF] bg-[#00A3FF]/10 px-2 py-0.5 rounded hover:bg-[#00A3FF]/20 transition-colors">MAX</button>
+                    <button onClick={handleMax} className="text-[10px] uppercase font-bold text-[#FF007A] bg-[#FF007A]/10 px-2 py-0.5 rounded hover:bg-[#FF007A]/20 transition-colors">MAX</button>
                   )}
                 </div>
               </div>
@@ -200,7 +200,7 @@ export function WithdrawalsTab() {
               <button 
                 onClick={handleRequest}
                 disabled={!amount || Number(amount) <= 0 || isPending}
-                className={`w-full py-4 text-lg rounded-xl mb-4 font-bold transition-colors shadow-sm ${(!amount || Number(amount) <= 0) || isPending ? 'bg-[#00A3FF]/50 text-white cursor-not-allowed' : 'bg-[#00A3FF] hover:bg-[#0090E6] text-white'}`}
+                className={`w-full py-4 text-lg rounded-xl mb-4 font-bold transition-colors shadow-sm ${(!amount || Number(amount) <= 0) || isPending ? 'bg-[#FF007A]/50 text-white cursor-not-allowed' : 'bg-[#FF007A] hover:bg-[#E6006F] text-white'}`}
               >
                 {isPending ? 'Confirm in Wallet...' : 'Request withdrawal'}
               </button>
@@ -226,8 +226,8 @@ export function WithdrawalsTab() {
         ) : (
           /* Distinguished Claim Workflow */
           <div className="space-y-6">
-            <div className="p-4 bg-[#00A3FF]/10 border border-[#00A3FF]/20 rounded-2xl flex items-start gap-3">
-              <Sparkles className="w-5 h-5 text-[#00A3FF] shrink-0 mt-0.5" />
+            <div className="p-4 bg-[#FF007A]/10 border border-[#FF007A]/20 rounded-2xl flex items-start gap-3">
+              <Sparkles className="w-5 h-5 text-[#FF007A] shrink-0 mt-0.5" />
               <div className="text-xs space-y-1">
                 <div className="font-bold text-text-main text-sm">Lido Official Claim Website Process</div>
                 <div className="text-text-secondary leading-relaxed">
@@ -263,7 +263,7 @@ export function WithdrawalsTab() {
               <button
                 onClick={handleClaim}
                 disabled={isPending}
-                className="w-full py-4 text-base rounded-xl font-bold bg-[#00A3FF] hover:bg-[#0090E6] text-white shadow-md shadow-[#00A3FF]/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-4 text-base rounded-xl font-bold bg-[#FF007A] hover:bg-[#E6006F] text-white shadow-md shadow-[#00A3FF]/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <EthIcon className="w-5 h-5" />
                 <span>{isPending ? 'Processing Claim...' : 'Execute On-Chain Claim'}</span>
