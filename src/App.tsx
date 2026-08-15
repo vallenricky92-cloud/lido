@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Moon, Sun, Bell, Box, TrendingUp, Zap, ArrowDown, ArrowDownUp, ExternalLink, ShieldCheck, RefreshCw } from 'lucide-react';
+import { Moon, Sun, Bell, Box, TrendingUp, Zap, ArrowDown, ExternalLink, ShieldCheck, RefreshCw } from 'lucide-react';
 import { useAccount } from 'wagmi';
 import { AnimatePresence, motion } from 'motion/react';
 import { ConnectButton } from './components/ConnectButton';
@@ -9,7 +9,6 @@ import { WrapTab } from './components/WrapTab';
 import { WithdrawalsTab } from './components/WithdrawalsTab';
 import { RewardsTab } from './components/RewardsTab';
 import { EarnTab } from './components/EarnTab';
-import { SwapTab } from './components/SwapTab';
 import { AdminTab } from './components/AdminTab';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { ToastProvider, useToast } from './components/ToastContext';
@@ -194,7 +193,6 @@ function AppContent() {
     { id: 'withdrawals', label: 'Withdrawals' },
     { id: 'rewards', label: 'Rewards' },
     { id: 'earn', label: 'Earn', badge: 'New' },
-    { id: 'swap', label: 'Swap' },
   ];
 
   const renderTab = () => {
@@ -204,7 +202,6 @@ function AppContent() {
       case 'withdrawals': return <WithdrawalsTab />;
       case 'rewards': return <RewardsTab marketData={marketData} />;
       case 'earn': return <EarnTab />;
-      case 'swap': return <SwapTab />;
       case 'admin': return isAdminEnabled ? <AdminTab /> : <StakeTab marketData={marketData} isFetching={isFetching || isManualRefreshing} />;
       default: return <StakeTab marketData={marketData} isFetching={isFetching || isManualRefreshing} />;
     }
@@ -221,7 +218,7 @@ function AppContent() {
           className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-center transition-all overflow-hidden"
           style={{ height: `${pullDistance}px`, opacity: pullDistance / 60 }}
         >
-          <div className="flex items-center gap-2 bg-card border border-border-main px-4 py-1.5 rounded-full shadow-lg text-xs font-bold text-[#00A3FF]">
+          <div className="flex items-center gap-2 bg-card border border-border-main px-4 py-1.5 rounded-full shadow-lg text-xs font-bold text-[#FF007A]">
             <RefreshCw className={`w-3.5 h-3.5 ${pullDistance >= 50 ? 'animate-spin' : ''}`} />
             <span>{pullDistance >= 50 ? 'Release to refresh market data' : 'Pull down to refresh'}</span>
           </div>
@@ -230,16 +227,16 @@ function AppContent() {
 
       {/* Premium Background Effects */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#00A3FF]/10 blur-[120px] mix-blend-screen opacity-50 dark:opacity-20 animate-pulse" style={{ animationDuration: '8s' }}></div>
-        <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#00D09E]/10 blur-[120px] mix-blend-screen opacity-50 dark:opacity-20 animate-pulse" style={{ animationDuration: '12s', animationDelay: '2s' }}></div>
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#FF007A]/10 blur-[120px] mix-blend-screen opacity-50 dark:opacity-20 animate-pulse" style={{ animationDuration: '8s' }}></div>
+        <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#7B61FF]/10 blur-[120px] mix-blend-screen opacity-50 dark:opacity-20 animate-pulse" style={{ animationDuration: '12s', animationDelay: '2s' }}></div>
       </div>
       
       <div className="relative z-10">
-      <header className="sticky top-0 z-50 border-b border-border-main bg-card/80 backdrop-blur-md relative overflow-hidden">
+      <header className="sticky top-0 z-50 border-b border-border-main bg-[#0D111C]/95 backdrop-blur-xl border-b border-[#2C2F3A] relative overflow-hidden">
         {/* Subtle top horizontal scroll progress bar */}
         <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-transparent pointer-events-none z-50">
           <div
-            className="h-full bg-gradient-to-r from-[#00A3FF] via-[#00D09E] to-[#00A3FF] transition-all duration-100 ease-out shadow-[0_0_6px_rgba(0,163,255,0.8)]"
+            className="h-full bg-gradient-to-r from-[#FF007A] via-[#FC72FF] to-[#FF007A] transition-all duration-100 ease-out shadow-[0_0_6px_rgba(255,0,122,0.8)]"
             style={{ width: `${scrollProgress}%` }}
           />
         </div>
@@ -289,7 +286,7 @@ function AppContent() {
             {isAdminEnabled && (
               <button 
                 onClick={() => setActiveTab(activeTab === 'admin' ? 'stake' : 'admin')}
-                className="text-xs font-semibold px-2.5 py-1 bg-amber-500/10 text-amber-500 hover:bg-amber-500/20 border border-amber-500/20 rounded-lg flex items-center gap-1 transition-colors"
+                className="text-xs font-semibold px-2.5 py-1 bg-[#FF007A]/10 text-[#FF007A] hover:bg-[#FF007A]/20 border border-[#FF007A]/20 rounded-lg flex items-center gap-1 transition-colors"
               >
                 <ShieldCheck className="w-3.5 h-3.5" />
                 {activeTab === 'admin' ? 'Return to Portal' : 'Admin Portal'}
@@ -301,9 +298,9 @@ function AppContent() {
               onClick={handleRefresh}
               disabled={isManualRefreshing}
               title="Refresh market data & price feeds"
-              className="p-2 rounded-full border border-border-main bg-input hover:bg-black/5 dark:hover:bg-white/5 text-text-secondary hover:text-[#00A3FF] transition-colors relative cursor-pointer group"
+              className="p-2 rounded-full border border-border-main bg-input hover:bg-black/5 dark:hover:bg-white/5 text-text-secondary hover:text-[#FF007A] transition-colors relative cursor-pointer group"
             >
-              <RefreshCw className={`w-4 h-4 transition-transform duration-500 ${isManualRefreshing ? 'animate-spin text-[#00A3FF]' : 'group-hover:rotate-180'}`} />
+              <RefreshCw className={`w-4 h-4 transition-transform duration-500 ${isManualRefreshing ? 'animate-spin text-[#FF007A]' : 'group-hover:rotate-180'}`} />
             </button>
 
             <button className="p-2 rounded-full border border-border-main bg-input hover:bg-black/5 dark:hover:bg-white/5 text-text-secondary transition-colors">
@@ -311,7 +308,7 @@ function AppContent() {
             </button>
             <ConnectButton className="rounded-full" />
             <button onClick={toggleTheme} className="p-2 rounded-full border border-border-main bg-input hover:bg-black/5 dark:hover:bg-white/5 text-text-secondary transition-colors">
-              {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {<Sun className="w-4 h-4 text-[#9B9B9B]" />}
             </button>
           </div>
         </div>
@@ -404,7 +401,7 @@ function AppContent() {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#00A3FF] hover:bg-[#0090E6] transition-colors"
+                  className="px-4 py-2 rounded-xl text-xs font-bold text-white bg-[#FF007A] hover:bg-[#E6006F] transition-colors"
                 >
                   Authenticate
                 </button>
@@ -414,32 +411,28 @@ function AppContent() {
         </div>
       )}
 
-      <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-border-main bg-card/90 backdrop-blur-md sm:hidden pb-safe">
+      <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-[#2C2F3A] bg-[#0D111C]/95 backdrop-blur-xl sm:hidden pb-safe">
         <div className="flex justify-around items-center h-16">
-          <button onClick={() => setActiveTab('stake')} className={`flex flex-col items-center gap-1 py-2 px-3 ${activeTab === 'stake' ? 'text-[#00A3FF]' : 'text-text-secondary hover:text-text-main transition-colors'}`}>
+          <button onClick={() => setActiveTab('stake')} className={`flex flex-col items-center gap-1 py-2 px-3 ${activeTab === 'stake' ? 'text-[#FF007A]' : 'text-text-secondary hover:text-text-main transition-colors'}`}>
             <Zap className="w-5 h-5" />
             <span className="text-[10px] font-bold">Stake</span>
           </button>
-          <button onClick={() => setActiveTab('wrap')} className={`flex flex-col items-center gap-1 py-2 px-3 ${activeTab === 'wrap' ? 'text-[#00A3FF]' : 'text-text-secondary hover:text-text-main transition-colors'}`}>
+          <button onClick={() => setActiveTab('wrap')} className={`flex flex-col items-center gap-1 py-2 px-3 ${activeTab === 'wrap' ? 'text-[#FF007A]' : 'text-text-secondary hover:text-text-main transition-colors'}`}>
             <Box className="w-5 h-5" />
             <span className="text-[10px] font-bold">Wrap</span>
           </button>
-          <button onClick={() => setActiveTab('withdrawals')} className={`flex flex-col items-center gap-1 py-2 px-3 ${activeTab === 'withdrawals' ? 'text-[#00A3FF]' : 'text-text-secondary hover:text-text-main transition-colors'}`}>
+          <button onClick={() => setActiveTab('withdrawals')} className={`flex flex-col items-center gap-1 py-2 px-3 ${activeTab === 'withdrawals' ? 'text-[#FF007A]' : 'text-text-secondary hover:text-text-main transition-colors'}`}>
             <ArrowDown className="w-5 h-5" />
             <span className="text-[10px] font-bold">Withdrawals</span>
           </button>
-          <button onClick={() => setActiveTab('rewards')} className={`flex flex-col items-center gap-1 py-2 px-3 ${activeTab === 'rewards' ? 'text-[#00A3FF]' : 'text-text-secondary hover:text-text-main transition-colors'}`}>
+          <button onClick={() => setActiveTab('rewards')} className={`flex flex-col items-center gap-1 py-2 px-3 ${activeTab === 'rewards' ? 'text-[#FF007A]' : 'text-text-secondary hover:text-text-main transition-colors'}`}>
             <TrendingUp className="w-5 h-5" />
             <span className="text-[10px] font-bold">Rewards</span>
           </button>
-          <button onClick={() => setActiveTab('earn')} className={`flex flex-col items-center gap-1 py-2 px-3 relative ${activeTab === 'earn' ? 'text-[#00A3FF]' : 'text-text-secondary hover:text-text-main transition-colors'}`}>
+          <button onClick={() => setActiveTab('earn')} className={`flex flex-col items-center gap-1 py-2 px-3 relative ${activeTab === 'earn' ? 'text-[#FF007A]' : 'text-text-secondary hover:text-text-main transition-colors'}`}>
             <TrendingUp className="w-5 h-5" />
             <span className="text-[10px] font-bold">Earn</span>
             <div className="absolute -top-1 -right-1 bg-red-500 text-white text-[8px] font-bold px-1 rounded uppercase shadow-sm">New</div>
-          </button>
-          <button onClick={() => setActiveTab('swap')} className={`flex flex-col items-center gap-1 py-2 px-3 ${activeTab === 'swap' ? 'text-[#00A3FF]' : 'text-text-secondary hover:text-text-main transition-colors'}`}>
-            <ArrowDownUp className="w-5 h-5" />
-            <span className="text-[10px] font-bold">Swap</span>
           </button>
         </div>
       </nav>
