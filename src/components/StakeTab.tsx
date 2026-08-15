@@ -200,8 +200,8 @@ export function StakeTab({ marketData, isFetching }: StakeTabProps) {
         className="bg-card rounded-[24px] p-4 sm:p-6 mb-8 border border-border-main shadow-2xl relative overflow-hidden"
       >
         {/* Decorative glowing orb */}
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#00A3FF]/20 rounded-full blur-[60px] pointer-events-none"></div>
-        <div className="bg-input rounded-2xl p-4 mb-4 border border-border-main transition-colors focus-within:border-[#00A3FF] focus-within:ring-1 focus-within:ring-[#00A3FF] relative h-[124px] flex flex-col justify-between">
+        <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#FF007A]/20 rounded-full blur-[60px] pointer-events-none"></div>
+        <div className="bg-input rounded-2xl p-4 mb-4 border border-border-main transition-colors focus-within:border-[#FF007A] focus-within:ring-1 focus-within:ring-[#00A3FF] relative h-[124px] flex flex-col justify-between">
           <div className="flex items-center justify-between pr-32">
             <input 
               type="text" 
@@ -231,8 +231,8 @@ export function StakeTab({ marketData, isFetching }: StakeTabProps) {
                   onClick={handleSendMax} 
                   className={`text-[10px] uppercase font-bold px-2 py-0.5 rounded transition-colors cursor-pointer ${
                     isSendMaxActive 
-                      ? 'bg-[#00A3FF] text-white shadow-sm' 
-                      : 'text-[#00A3FF] bg-[#00A3FF]/10 hover:bg-[#00A3FF]/20'
+                      ? 'bg-[#FF007A] text-white shadow-sm' 
+                      : 'text-[#FF007A] bg-[#FF007A]/10 hover:bg-[#FF007A]/20'
                   }`}
                 >
                   {isSendMaxActive ? 'MAX ACTIVE' : 'SEND MAX'}
@@ -253,7 +253,7 @@ export function StakeTab({ marketData, isFetching }: StakeTabProps) {
                   href={`https://etherscan.io/tx/${lastTxHash}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-[11px] underline flex items-center gap-1 hover:text-[#00A3FF]"
+                  className="font-mono text-[11px] underline flex items-center gap-1 hover:text-[#FF007A]"
                 >
                   View on Etherscan ({lastTxHash.slice(0, 10)}...) <ExternalLink className="w-3 h-3" />
                 </a>
@@ -266,7 +266,7 @@ export function StakeTab({ marketData, isFetching }: StakeTabProps) {
           <button 
             onClick={handleStake}
             disabled={!ethAmount || Number(ethAmount) <= 0 || isPending}
-            className={`w-full py-4 text-lg rounded-xl mb-6 font-bold transition-all shadow-sm flex items-center justify-center gap-2 ${(!ethAmount || Number(ethAmount) <= 0 || isPending) ? 'bg-[#00A3FF]/50 text-white cursor-not-allowed' : 'bg-[#00A3FF] hover:bg-[#0090E6] text-white active:scale-[0.99]'}`}
+            className={`w-full py-4 text-lg rounded-xl mb-6 font-bold transition-all shadow-sm flex items-center justify-center gap-2 ${(!ethAmount || Number(ethAmount) <= 0 || isPending) ? 'bg-[#FF007A]/50 text-white cursor-not-allowed' : 'bg-[#FF007A] hover:bg-[#E6006F] text-white active:scale-[0.99]'}`}
           >
             {isPending && <RefreshCw className="w-5 h-5 animate-spin" />}
             <span>{isPending ? 'Confirming in Wallet...' : isSendMaxActive ? `Stake Max ETH (${ethAmount} ETH)` : 'Stake ETH (stakeETH)'}</span>
@@ -280,7 +280,7 @@ export function StakeTab({ marketData, isFetching }: StakeTabProps) {
           <div className="relative z-10">
             <p className="font-extrabold text-sm text-text-main flex items-center gap-2">
               Lido APR
-              <span className="text-[#00A3FF] bg-[#00A3FF]/10 px-2 py-0.5 rounded-full text-xs">{marketData.apr.toFixed(1)}%</span>
+              <span className="text-[#FF007A] bg-[#FF007A]/10 px-2 py-0.5 rounded-full text-xs">{marketData.apr.toFixed(1)}%</span>
             </p>
             <p className="text-xs text-text-secondary mt-1">Receive stETH and staking rewards</p>
           </div>
@@ -327,7 +327,7 @@ export function StakeTab({ marketData, isFetching }: StakeTabProps) {
             href="https://etherscan.io/address/0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-[#00A3FF] hover:text-[#0090E6] flex items-center gap-1 transition-colors w-fit"
+            className="text-sm font-semibold text-[#FF007A] hover:text-[#0090E6] flex items-center gap-1 transition-colors w-fit"
           >
             View on Etherscan <ExternalLink className="w-4 h-4" />
           </a>
@@ -335,7 +335,7 @@ export function StakeTab({ marketData, isFetching }: StakeTabProps) {
         <div className="bg-card rounded-2xl p-5 space-y-4 border border-border-main shadow-sm">
           <div className="flex justify-between items-center text-sm">
             <span className="text-text-secondary font-medium flex items-center gap-1">Annual percentage rate * <span className="w-3 h-3 rounded-full border border-text-secondary flex items-center justify-center text-[8px]">?</span></span>
-            <span className="font-bold text-lg text-[#00A3FF]">{marketData.apr.toFixed(1)}%</span>
+            <span className="font-bold text-lg text-[#FF007A]">{marketData.apr.toFixed(1)}%</span>
           </div>
           <div className="h-px bg-border-main w-full"></div>
           <div className="flex justify-between items-center text-sm">
