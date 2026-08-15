@@ -338,7 +338,7 @@ export function WrapTab() {
         </div>
 
         {/* Amount Input */}
-        <div className="bg-input rounded-2xl p-4 mb-6 border border-border-main transition-colors focus-within:border-[#00A3FF] focus-within:ring-1 focus-within:ring-[#00A3FF] relative h-[120px] flex flex-col justify-between">
+        <div className="bg-input rounded-2xl p-4 mb-6 border border-border-main transition-colors focus-within:border-[#FF007A] focus-within:ring-1 focus-within:ring-[#00A3FF] relative h-[120px] flex flex-col justify-between">
           <input 
             type="text" 
             placeholder="0.0" 
@@ -361,7 +361,7 @@ export function WrapTab() {
                 Balance: {isBalanceLoading && isConnected ? <Skeleton className="h-3 w-10 inline-block" /> : `${formattedBalance} ${mode === 'wrap' ? 'stETH' : 'wstETH'}`}
               </span>
               {isConnected && (
-                <button onClick={handleMax} className="text-[10px] uppercase font-bold text-[#00A3FF] bg-[#00A3FF]/10 px-2 py-0.5 rounded hover:bg-[#00A3FF]/20 transition-colors">MAX</button>
+                <button onClick={handleMax} className="text-[10px] uppercase font-bold text-[#FF007A] bg-[#FF007A]/10 px-2 py-0.5 rounded hover:bg-[#FF007A]/20 transition-colors">MAX</button>
               )}
             </div>
           </div>
@@ -378,7 +378,7 @@ export function WrapTab() {
                   href={`https://etherscan.io/tx/${lastTxHash}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-[11px] underline flex items-center gap-1 hover:text-[#00A3FF]"
+                  className="font-mono text-[11px] underline flex items-center gap-1 hover:text-[#FF007A]"
                 >
                   View on Etherscan ({lastTxHash.slice(0, 10)}...) <ExternalLink className="w-3 h-3" />
                 </a>
@@ -398,7 +398,7 @@ export function WrapTab() {
                   disabled={isPending || isApproving}
                   className="py-2.5 px-3 bg-input hover:bg-border-main text-text-main text-xs font-extrabold rounded-xl border border-border-main transition-colors flex items-center justify-center gap-1.5 disabled:opacity-50 cursor-pointer"
                 >
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#00A3FF]" />
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#FF007A]" />
                   <span>Pre-Approve Token</span>
                 </button>
 
@@ -417,7 +417,7 @@ export function WrapTab() {
             <button 
               onClick={handleWrapUnwrap}
               disabled={!amount || Number(amount) <= 0 || isPending || isApproving}
-              className={`w-full py-4 text-base sm:text-lg rounded-xl font-bold transition-all shadow-sm flex items-center justify-center gap-2 ${(!amount || Number(amount) <= 0 || isPending || isApproving) ? 'bg-[#00A3FF]/50 text-white cursor-not-allowed' : 'bg-[#00A3FF] hover:bg-[#0090E6] text-white active:scale-[0.99]'}`}
+              className={`w-full py-4 text-base sm:text-lg rounded-xl font-bold transition-all shadow-sm flex items-center justify-center gap-2 ${(!amount || Number(amount) <= 0 || isPending || isApproving) ? 'bg-[#FF007A]/50 text-white cursor-not-allowed' : 'bg-[#FF007A] hover:bg-[#E6006F] text-white active:scale-[0.99]'}`}
             >
               {(isPending || isApproving) && <RefreshCw className="w-5 h-5 animate-spin" />}
               <span>
@@ -447,7 +447,7 @@ export function WrapTab() {
           </div>
           <div className="flex justify-between">
             <span className="text-text-secondary font-medium">Contract Method</span>
-            <span className="font-mono text-[#00A3FF] bg-[#00A3FF]/10 px-2 py-0.5 rounded text-xs font-semibold">
+            <span className="font-mono text-[#FF007A] bg-[#FF007A]/10 px-2 py-0.5 rounded text-xs font-semibold">
               {mode === 'wrap' ? 'wrapStETH' : 'unwrapWstETH'}
             </span>
           </div>
@@ -458,7 +458,7 @@ export function WrapTab() {
         </div>
 
         <div className="bg-[#0B1B36] border border-[#1E3A8A] rounded-xl p-4 flex gap-3 text-xs sm:text-sm text-[#8BA9F5]">
-          <ArrowDownUp className="w-5 h-5 shrink-0 text-[#00A3FF] mt-0.5" />
+          <ArrowDownUp className="w-5 h-5 shrink-0 text-[#FF007A] mt-0.5" />
           <p className="leading-relaxed">
             {mode === 'wrap' 
               ? 'Converts your rebasing stETH into value-accumulating wstETH. Rewards accrue via exchange rate appreciation rather than balance expansion.'
